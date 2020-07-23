@@ -1,0 +1,4 @@
+Give proper credit (in credits screen or somewhere else in game) to limbusdev / Georg Eckert
+
+https://github.com/limbusdev/guardian_monsters_puzzle
+https://opengameart.org/content/match-3-game-blocks-tiles

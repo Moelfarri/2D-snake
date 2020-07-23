@@ -1,0 +1,6 @@
+extends Node2D
+
+
+enum CELL_TYPES {EMPTY = -1, PLAYER, OBSTACLE, FOOD, BODY}
+export(CELL_TYPES)  var type = CELL_TYPES.PLAYER
+

@@ -1,0 +1,24 @@
+extends "pawn_Class.gd"
+
+
+onready var Grid = get_parent()
+
+
+
+
+func _process(_delta):
+	var position_in_grid = Grid.world_to_map(Grid.get_node("Body").position)
+	if not Grid.get_node("Player").get_input_direction():
+		return
+	var target_position = Grid.request_move(self, Global.direction_array[position_in_grid.x][position_in_grid.y])
+	if target_position:
+		move_to(target_position)
+
+
+func move_to(target_position):
+	set_process(false)
+	position = target_position
+	set_process(true)
+	
+
+
