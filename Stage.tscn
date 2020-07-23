@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://blocks.tres" type="TileSet" id=1]
-[ext_resource path="res://Stage.gd" type="Script" id=2]
 [ext_resource path="res://Grid.gd" type="Script" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Food.tscn" type="PackedScene" id=5]
 
 [node name="Stage" type="Node2D"]
-script = ExtResource( 2 )
 
 [node name="Grid" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -21,4 +19,13 @@ script = ExtResource( 3 )
 position = Vector2( 192, 192 )
 
 [node name="Food" parent="Grid" instance=ExtResource( 5 )]
-position = Vector2( 832, 1216 )
+position = Vector2( 464, 608 )
+
+[node name="Food2" parent="Grid" instance=ExtResource( 5 )]
+position = Vector2( 960, 320 )
+
+[node name="Food4" parent="Grid" instance=ExtResource( 5 )]
+position = Vector2( 848, 192 )
+
+[node name="Food5" parent="Grid" instance=ExtResource( 5 )]
+position = Vector2( 704, 208 )
