@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Snake Texture/head.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Snake Texture/food.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Snake Texture/light-grass.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Snake Texture/body.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 504, 96 )
+
+[node name="Sprite1" type="Sprite" parent="."]
+position = Vector2( -488, -96 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 308, 0, 77, 72 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -440, -96 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 308, 0, 77, 72 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -384, -96 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 308, 0, 77, 72 )
+
+[node name="sprite4" type="Sprite" parent="."]
+position = Vector2( -328, -96 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 308, 0, 77, 72 )

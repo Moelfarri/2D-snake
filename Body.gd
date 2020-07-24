@@ -8,6 +8,7 @@ var body_part_id
 
 
 func _process(_delta):
+
 	if not Grid.get_node("Player").get_input_direction():
 		return
 
