@@ -10,6 +10,7 @@ func _process(_delta):
 	#IF SELF CONTROL, move input_direction variable into process and and have if not get_input_direction() instead of Global.wait_time if sentence
 	if get_input_direction():
 		input_direction = get_input_direction()
+		$MoveSoundeffect.play()
 	
 	if not Global.wait_time == 0:  
 		return
@@ -17,6 +18,7 @@ func _process(_delta):
 	var target_position = Grid.request_move(self, input_direction)
 	if target_position:
 		move_to(target_position)
+
 
 
 
@@ -33,12 +35,4 @@ func move_to(target_position):
 	position = target_position
 	set_process(true)
 	
-
-
-func _on_Timer_timeout():
-	pass
-
-
-
-
 

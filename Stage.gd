@@ -1,6 +1,9 @@
 extends Node2D
 
 
- 
+
 func _ready():
-	pass # Replace with function body.
+	OS.low_processor_usage_mode = true
+	get_tree().paused = true
+
+

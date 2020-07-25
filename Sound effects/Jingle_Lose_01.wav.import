@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Jingle_Lose_01.wav-9788c052954ef2346dda020dec2715ca.sample"
+
+[deps]
+
+source_file="res://Sound effects/Jingle_Lose_01.wav"
+dest_files=[ "res://.import/Jingle_Lose_01.wav-9788c052954ef2346dda020dec2715ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

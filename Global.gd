@@ -13,6 +13,7 @@ func _process(_delta):
 		wait_time = 0
 
 
+
 func init_directionArray(columns, rows):
 	var array = []
 	for column in columns:

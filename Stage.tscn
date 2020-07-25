@@ -1,22 +1,107 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Background.tres" type="TileSet" id=2]
 [ext_resource path="res://Grid.gd" type="Script" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Food.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/ui/transparentLight22.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/ui/transparentLight24.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/ui/transparentLight25.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/ui/transparentLight23.png" type="Texture" id=9]
+[ext_resource path="res://Sound effects/Jingle_Lose_01.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sprites/ui/flatLight40.png" type="Texture" id=11]
+[ext_resource path="res://Stage.gd" type="Script" id=12]
+[ext_resource path="res://StartScreen.gd" type="Script" id=13]
 
 [node name="Stage" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="Background" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 65536, 0, 0, 65537, 1, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 0, 0, 131072, 0, 0, 131073, 1, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 1, 0, 131078, 0, 0, 131079, 1, 0, 131080, 0, 0, 196608, 0, 0, 196609, 1, 0, 196610, 1, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 1, 0, 196616, 0, 0, 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327680, 0, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 393216, 0, 0, 393217, 1, 0, 393218, 1, 0, 393219, 0, 0, 393220, 1, 0, 393221, 1, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 1, 0, 458757, 1, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 524288, 0, 0, 524289, 1, 0, 524290, 1, 0, 524291, 0, 0, 524292, 0, 0, 524293, 1, 0, 524294, 1, 0, 524295, 0, 0, 524296, 0, 0, 589824, 0, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 0, 0, 589829, 0, 0, 589830, 1, 0, 589831, 1, 0, 589832, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 1, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 1, 0, 720899, 0, 0, 720900, 0, 0, 720901, 1, 0, 720902, 1, 0, 720903, 0, 0, 720904, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 1, 0, 786435, 0, 0, 786436, 1, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 851968, 0, 0, 851969, 1, 0, 851970, 1, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 917504, 0, 0, 917505, 1, 0, 917506, 1, 0, 917507, 0, 0, 917508, 0, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Grid" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
+z_index = 1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 format = 1
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="Grid" instance=ExtResource( 4 )]
 position = Vector2( 144, 44 )
 
 [node name="Food" parent="Grid" instance=ExtResource( 5 )]
-position = Vector2( 144, 272 )
+position = Vector2( 144, 304 )
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+layer = 2
+
+[node name="DownButton" type="TouchScreenButton" parent="UI/CanvasLayer"]
+position = Vector2( 248, 920 )
+normal = ExtResource( 8 )
+action = "ui_down"
+
+[node name="RightButton" type="TouchScreenButton" parent="UI/CanvasLayer"]
+position = Vector2( 312, 856 )
+normal = ExtResource( 9 )
+action = "ui_right"
+
+[node name="UpButton" type="TouchScreenButton" parent="UI/CanvasLayer"]
+position = Vector2( 248, 792 )
+normal = ExtResource( 7 )
+action = "ui_up"
+
+[node name="LeftButton" type="TouchScreenButton" parent="UI/CanvasLayer"]
+position = Vector2( 184, 856 )
+normal = ExtResource( 6 )
+action = "ui_left"
+
+[node name="StartScreen" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="StartScreen"]
+layer = 2
+
+[node name="BlackOverlay" type="ColorRect" parent="StartScreen/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.490196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TouchScreenButton" parent="StartScreen/CanvasLayer"]
+position = Vector2( 232, 456 )
+normal = ExtResource( 11 )
+
+[node name="DieSoundEffect" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+[connection signal="pressed" from="StartScreen/CanvasLayer/StartButton" to="StartScreen" method="_on_StartButton_pressed"]
