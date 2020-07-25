@@ -1,24 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://blocks.tres" type="TileSet" id=1]
-[ext_resource path="res://Stage.gd" type="Script" id=2]
+[ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Grid.gd" type="Script" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Food.tscn" type="PackedScene" id=5]
 
 [node name="Stage" type="Node2D"]
-script = ExtResource( 2 )
 
 [node name="Grid" type="TileMap" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 128, 128 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
 format = 1
-tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, 65535, 1, 0, 9, 1, 0, 131071, 1, 0, 65545, 1, 0, 196607, 1, 0, 131081, 1, 0, 262143, 1, 0, 196617, 1, 0, 327679, 1, 0, 262153, 1, 0, 393215, 1, 0, 327689, 1, 0, 458751, 1, 0, 393225, 1, 0, 524287, 1, 0, 458761, 1, 0, 589823, 1, 0, 524297, 1, 0, 655359, 1, 0, 589833, 1, 0, 720895, 1, 0, 655369, 1, 0, 786431, 1, 0, 720905, 1, 0, 851967, 1, 0, 786441, 1, 0, 917503, 1, 0, 851977, 1, 0, 983039, 1, 0, 917513, 1, 0, 1048575, 1, 0, 983049, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0 )
 script = ExtResource( 3 )
 
 [node name="Player" parent="Grid" instance=ExtResource( 4 )]
-position = Vector2( 192, 192 )
+position = Vector2( 144, 44 )
 
 [node name="Food" parent="Grid" instance=ExtResource( 5 )]
-position = Vector2( 832, 1216 )
+position = Vector2( 144, 272 )
