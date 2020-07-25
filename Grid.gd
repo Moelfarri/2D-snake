@@ -1,9 +1,12 @@
 extends TileMap
 
 #TODO: 
-#MAKE MOVING BASED ON TICKING
-#FIX A NICE UI AND MAKE IT MOBILE FRIENDLY
+#Start Screen
+#Lose conditions
+#if you lose it goes back to start screen
+#ADD SOUND EFFECTS
 #CLEAN UP THE CODE, FOR EXAMPLE CHANGE PLAYER TO HEAD, etc
+
 
 const BODY = preload("res://Body.tscn")
 const FOOD = preload("res://Food.tscn")
@@ -29,6 +32,7 @@ func _process(_delta):
 		add_new_body_part()
 		add_new_food()
 		food_eaten = false
+	#print(Global.timer.get_time_left())
 	
 
 

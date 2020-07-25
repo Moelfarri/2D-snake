@@ -8,11 +8,10 @@ var body_part_id
 
 
 func _process(_delta):
-
-	if not Grid.get_node("Player").get_input_direction():
+	#for self control replace global.wait_time with Grid.get_node("Player").get_input_direction()
+	if not Global.wait_time == 0:
 		return
-
-
+	
 	var position_in_grid = Grid.world_to_map(Grid.get_node("Body" + str(body_part_id)).position) 
 	var target_position = Grid.request_move(self, Global.direction_array[position_in_grid.x][position_in_grid.y])
 	
