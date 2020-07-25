@@ -1,7 +1,6 @@
 extends TileMap
 
 #TODO: 
-#Start Screen
 #Lose conditions
 #if you lose it goes back to start screen
 #ADD SOUND EFFECTS
