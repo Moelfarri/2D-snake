@@ -1,9 +1,6 @@
 extends TileMap
 
 #TODO: 
-#Lose conditions
-#if you lose it goes back to start screen
-#ADD SOUND EFFECTS
 #CLEAN UP THE CODE, FOR EXAMPLE CHANGE PLAYER TO HEAD, etc
 
 
@@ -31,7 +28,7 @@ func _process(_delta):
 		add_new_body_part()
 		add_new_food()
 		food_eaten = false
-	#print(Global.timer.get_time_left())
+
 	
 
 
@@ -64,22 +61,23 @@ func request_move(pawn, direction):
 
 			return map_to_world(cell_target) + cell_size/2   #centers the vector otherwise we are top left corner
 		CELL_TYPES.OBSTACLE:
-			#var pawn_name = get_cell_pawn(cell_target, cell_tile_id).name
-			print("collided")
+			game_over()
 			
 		CELL_TYPES.BODY:
-			print("colliding with body")
+			game_over()
 			
 		CELL_TYPES.PLAYER:
-			print("colliding with player")
+			print("colliding with self?? wtf")
 		CELL_TYPES.FOOD:
 			var pawn_name = get_cell_pawn(cell_target)
+			pawn_name.queue_free()
+			food_eaten = true
+
 			set_cellv(cell_target, CELL_TYPES.PLAYER)
 			set_cellv(cell_start, CELL_TYPES.EMPTY)
 			if pawn.type == CELL_TYPES.PLAYER:
 				Global.direction_array[cell_start.x][cell_start.y] = direction 
-			pawn_name.queue_free()
-			food_eaten = true
+
 			return map_to_world(cell_target) + cell_size/2   #centers the vector otherwise we are top left corner
 
 
@@ -124,3 +122,10 @@ func init_walls():
 		set_cell(Global.COLUMNS, j, CELL_TYPES.OBSTACLE)
 
 
+func game_over():
+	get_parent().get_node("DieSoundEffect").play()
+	get_tree().paused = true
+	OS.delay_msec(2000)
+	get_parent().get_node("StartScreen/CanvasLayer/BlackOverlay").visible = true
+	get_parent().get_node("StartScreen/CanvasLayer/StartButton").visible = true
+	get_tree().reload_current_scene()

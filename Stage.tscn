@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/ui/transparentLight24.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/ui/transparentLight25.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/ui/transparentLight23.png" type="Texture" id=9]
-[ext_resource path="res://Sound effects/Move 8bit.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sound effects/Jingle_Lose_01.wav" type="AudioStream" id=10]
 [ext_resource path="res://Sprites/ui/flatLight40.png" type="Texture" id=11]
 [ext_resource path="res://Stage.gd" type="Script" id=12]
 [ext_resource path="res://StartScreen.gd" type="Script" id=13]
@@ -102,5 +102,6 @@ position = Vector2( 232, 456 )
 normal = ExtResource( 11 )
 
 [node name="DieSoundEffect" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 10 )
 [connection signal="pressed" from="StartScreen/CanvasLayer/StartButton" to="StartScreen" method="_on_StartButton_pressed"]
